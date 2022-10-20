@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
+<body class="">
     
     <div class="card container mt-5 pt-5 text-center align-center bg-primary text-white">
       
@@ -16,23 +16,67 @@
           <h5 class="card-title">Biglietto Boolitalia</h5>
           <p class="card-text">Crea comodamente il tuo biglietto online in 1 minuto!</p>
         <h6 class="flex-column">Inserisci i tuoi dati (Nome & Quanti KM vuoi percorrere!)</h6>
-        <h6 class="float-center">Età?</h6>
+     
 
-          <input type="text" placeholder="Nome e cognome grazie!">
-          <input type="text" placeholder="Km che vuole percorrere?">
-          <select id="selectBox">
-            <option value="">Maggiorenne&hellip;</option>
-            <option value="aye">Under18</option>
-            <option value="eh">65+</option>
+          <input id="name" type="text" placeholder="Nome e cognome grazie!">
+          <input id="percorsoKm" type="text" placeholder="Km che vuole percorrere?">
+          <select id="fascia-eta">
+            <option value="maggiorenne">Maggiorenne&hellip;</option>
+            <option value="minorenne">Under18</option>
+            <option value="over65">Over 65+</option>
           </select>
+
+          
           
 
-          <hr>
-          <button class="btn btn-dark w-25">Genera</button>
-          <button class="btn btn-dark w-25">Annulla</button>
+         <br>
+          <button onclick=submitForm() id="generaBiglietto" class="btn btn-dark w-25 mt-3">Genera</button>
+          <button id= "wipeBiglietto" class="btn btn-dark w-25 mt-3">Annulla</button>
+         
+
+          
         
         </div>
+
+
+       
       </div>
+
+      <div class="card container p-5 mt-5 bg-dark text-white">
+        <section>
+            <h2 class="title pb-5">Il tuo biglietto</h2>
+            <div id="biglietto">
+              <h2 class="pb-5">Dettaglio passeggeri</h2>
+              <div>
+                <div>
+                  <h5>Nome Passeggero 
+                    <br>
+                    <span class=" text-danger" id="nomepass"></span></h5>
+                  
+                </div>
+                <div>
+                  <table class="pb-2">
+                    <thead>
+                      <tr>
+                        <th>Carrozza</th>
+                        
+                        <th>Codice CP</th>
+                        <th>Costo biglietto</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>                    
+                        <td><span class="text-danger" id="carrozza"></span></td>
+                        <td><span class="text-danger" id="codice-cp"></span></td>
+                        <td><span class="text-danger" id="costo"></span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
 
     <script src="./assets/js/main.js"></script>
 </body>
