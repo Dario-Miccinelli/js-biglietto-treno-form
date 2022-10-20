@@ -27,3 +27,8 @@ function submitForm() {
     }
     
 }
+
+
+function submitWipe(){
+    window.location.reload();
+} 
